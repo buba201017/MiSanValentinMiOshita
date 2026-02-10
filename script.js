@@ -72,6 +72,7 @@ function render() {
   const isLast = i === photos.length - 1;
   btnAsk.style.display = isLast ? "inline-block" : "none";
   next.style.visibility = isLast ? "hidden" : "visible";
+  prev.style.visibility = (i === 0) ? "hidden" : "visible";
 }
 
 prev.addEventListener("click", () => {
