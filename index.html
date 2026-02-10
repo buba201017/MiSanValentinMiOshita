@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Quieres ser mi San Valentín? 💘</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <main class="card" id="card">
+    <header class="top" id="top">
+      <h1 id="title">Hola, mi oshita 💖</h1>
+      <p id="subtitle">
+        Te hice algo chiquito pero con mucho cariño y mucha dedicación de lo que sé.
+        Antes de tomar una decisión primero revivamos algunos momentos bellos mi vida 💘.
+      </p>
+    </header>
+
+    <section class="gallery" id="gallery">
+      <button class="nav" id="prev" aria-label="Anterior">‹</button>
+
+      <figure class="frame">
+        <img id="photo" src="assets/img1.jpeg" alt="Foto bonita">
+        <figcaption id="caption">Momento #1: Iniciar con mi oshita el 2026 💖</figcaption>
+      </figure>
+
+      <button class="nav" id="next" aria-label="Siguiente">›</button>
+    </section>
+
+    <div class="cta" id="cta">
+      <button class="btn primary" id="btnAsk">Tengo una pregunta...</button>
+    </div>
+
+    <section class="question hidden" id="question">
+      <h2>¿Quieres ser mi San Valentín? 💘</h2>
+      <div class="buttons">
+        <button class="btn yes" id="btnYes">Sí 💞</button>
+        <button class="btn no" id="btnNo">No 😅</button>
+      </div>
+      <p class="hint" id="hint"></p>
+    </section>
+
+    <!-- Esto queda por si quieres repetir, pero ya no será lo principal -->
+    <section class="final hidden" id="final">
+      <h2>JEJEJE MIAMOR GRACIAS POR ACEPTAR 🥰</h2>
+      <p>Ahora sí oficialmente mi oshita es mi San Valentin, Te amo mucho. 💖</p>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <button class="btn primary" id="btnReplay">Repetir</button>
+    </section>
+  </main>
+
+  <!-- ✅ OVERLAY IMPACTANTE -->
+  <div class="overlay hidden" id="overlay" role="dialog" aria-modal="true">
+    <canvas id="fireworks"></canvas>
+
+    <div class="overlay-card" id="overlayCard">
+      <div class="badge">💘 OFICIAL 💘</div>
+      <h2 class="overlay-title">JEJEJE MIAMOR GRACIAS POR ACEPTAR 🥰</h2>
+      <p class="overlay-text">Ahora sí oficialmente mi oshita es mi San Valentin, Te amo mucho. 💖. 
+        Disfrutaremos mucho del 14 de Febrero miamor.
+      </p>
+
+      <div class="overlay-actions">
+        <button class="btn primary" id="btnCloseOverlay">Cerrar</button>
+        <button class="btn yes" id="btnReplay2">Repetir</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
