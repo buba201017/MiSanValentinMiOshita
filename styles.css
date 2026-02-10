@@ -239,3 +239,4 @@ figcaption{
   flex-wrap:wrap;
 }
 .overlay.hidden { display: none; }
+#prev { visibility: hidden; pointer-events: none; }
