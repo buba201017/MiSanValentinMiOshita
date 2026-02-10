@@ -54,10 +54,12 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 function render() {
+  // Imagen y texto
   photo.src = photos[i].src;
   caption.textContent = photos[i].caption;
   photo.style.objectPosition = photos[i].pos || "50% 50%";
 
+  // Animación suave al cambiar imagen
   photo.animate(
     [
       { transform: "scale(1.03)", filter: "brightness(1.05)" },
@@ -66,14 +68,26 @@ function render() {
     { duration: 240, easing: "ease-out" }
   );
 
+  // Modo flujo (oculta header desde momento 2)
   if (i >= 1) card.classList.add("flow");
   else card.classList.remove("flow");
 
+  // Botón "Tengo una pregunta..." solo en el último
   const isLast = i === photos.length - 1;
   btnAsk.style.display = isLast ? "inline-block" : "none";
+
+  // 🔥 CONTROL CORRECTO DE FLECHAS 🔥
+  const isFirst = i === 0;
+
+  // Flecha izquierda
+  prev.style.visibility = isFirst ? "hidden" : "visible";
+  prev.style.pointerEvents = isFirst ? "none" : "auto";
+
+  // Flecha derecha
   next.style.visibility = isLast ? "hidden" : "visible";
-  prev.style.visibility = (i === 0) ? "hidden" : "visible";
+  next.style.pointerEvents = isLast ? "none" : "auto";
 }
+
 
 prev.addEventListener("click", () => {
   i = (i - 1 + photos.length) % photos.length;
